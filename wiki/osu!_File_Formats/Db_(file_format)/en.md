@@ -76,9 +76,9 @@ Some data types specific to osu!.db are defined below.
 | Byte/Single | HP drain. Byte if the version is less than 20140609, Single otherwise. |
 | Byte/Single | Overall difficulty. Byte if the version is less than 20140609, Single otherwise. |
 | Double | Slider velocity |
-| Int-Double pair* | An Int indicating the number of following Int-Double pairs, then the aforementioned pairs. Star Rating info for osu! standard, in each pair, the Int is the mod combination, and the Double is the Star Rating. Only present if version is greater than or equal to 20140609. |
-| Int-Double pair* | An Int indicating the number of following Int-Double pairs, then the aforementioned pairs. Star Rating info for Taiko, in each pair, the Int is the mod combination, and the Double is the Star Rating. Only present if version is greater than or equal to 20140609. |
-| Int-Double pair* | An Int indicating the number of following Int-Double pairs, then the aforementioned pairs. Star Rating info for CTB, in each pair, the Int is the mod combination, and the Double is the Star Rating. Only present if version is greater than or equal to 20140609. |
+| Int-Double pair* | An Int indicating the number of following Int-Double pairs, then the aforementioned pairs. Star Rating info for osu!standard, in each pair, the Int is the mod combination, and the Double is the Star Rating. Only present if version is greater than or equal to 20140609. |
+| Int-Double pair* | An Int indicating the number of following Int-Double pairs, then the aforementioned pairs. Star Rating info for osu!taiko, in each pair, the Int is the mod combination, and the Double is the Star Rating. Only present if version is greater than or equal to 20140609. |
+| Int-Double pair* | An Int indicating the number of following Int-Double pairs, then the aforementioned pairs. Star Rating info for osu!catch, in each pair, the Int is the mod combination, and the Double is the Star Rating. Only present if version is greater than or equal to 20140609. |
 | Int-Double pair* | An Int indicating the number of following Int-Double pairs, then the aforementioned pairs. Star Rating info for osu!mania, in each pair, the Int is the mod combination, and the Double is the Star Rating. Only present if version is greater than or equal to 20140609. |
 | Int | Drain time, in seconds |
 | Int | Total time, in milliseconds |
@@ -87,13 +87,13 @@ Some data types specific to osu!.db are defined below.
 | Int | Beatmap ID |
 | Int | Beatmap set ID |
 | Int | Thread ID |
-| Byte | Grade achieved in osu! standard. |
-| Byte | Grade achieved in Taiko. |
-| Byte | Grade achieved in CTB. |
+| Byte | Grade achieved in osu!standard. |
+| Byte | Grade achieved in osu!taiko. |
+| Byte | Grade achieved in osu!catch. |
 | Byte | Grade achieved in osu!mania. |
 | Short | Local beatmap offset |
 | Single | Stack leniency |
-| Byte | Osu gameplay mode. 0x00 = osu!Standard, 0x01 = Taiko, 0x02 = CTB, 0x03 = Mania |
+| Byte | osu! gameplay mode. 0x00 = osu!Standard, 0x01 = osu!taiko, 0x02 = osu!catch, 0x03 = osu!mania |
 | String | Song source |
 | String | Song tags |
 | Short | Online offset |
@@ -110,7 +110,7 @@ Some data types specific to osu!.db are defined below.
 | Boolean | Visual override |
 | Short? | Unknown. Only present if version is less than 20140609. |
 | Int | Last modification time (?) |
-| Byte | Mania scroll speed |
+| Byte | osu!mania scroll speed |
 
 ## collection.db
 
@@ -155,16 +155,16 @@ This database contains the scores achieved locally.
 
 | Data type | Description |
 | :-- | :-- |
-| Byte | osu! gameplay mode (0x00 = osu!Standard, 0x01 = Taiko, 0x02 = CTB, 0x03 = Mania) |
+| Byte | osu! gameplay mode (0x00 = osu!standard, 0x01 = osu!taiko, 0x02 = osu!catch, 0x03 = osu!mania) |
 | Int | Version of this score/replay (e.g. 20150203) |
 | String | Beatmap MD5 hash |
 | String | Player name |
 | String | Replay MD5 hash |
 | Short | Number of 300's |
-| Short | Number of 100's in osu!Standard, 150's in Taiko, 100's in CTB, 100's in Mania |
-| Short | Number of 50's in osu!Standard, small fruit in CTB, 50's in Mania |
-| Short | Number of Gekis in osu!Standard, Max 300's in Mania |
-| Short | Number of Katus in osu!Standard, 200's in Mania |
+| Short | Number of 100's in osu!Standard, 150's in osu!taiko, 100's in osu!catch, 100's in osu!mania |
+| Short | Number of 50's in osu!Standard, small fruit in osu!catch, 50's in osu!mania |
+| Short | Number of Gekis in osu!Standard, Max 300's in osu!mania |
+| Short | Number of Katus in osu!Standard, 200's in osu!mania |
 | Short | Number of misses |
 | Int | Replay score |
 | Short | Max Combo |
